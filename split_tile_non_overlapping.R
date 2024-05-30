@@ -6,6 +6,9 @@ library(sf)
 split_size = 128 #size of image patches that you want to split
 
 rst <- raster("raster file that you want to split")
+#name of the raster files
+nm <- strsplit(basename("raster file that you want to split", ".tif")[[1]][1]
+               
 rst.grd <- aggregate(rst, fact = split_size)
 values(rst.grd) <- seq(1, raster::ncol(rst.grd)*raster::nrow(rst.grd), 1)
 rst.shp <- as.polygons(rast(rst.grd))
