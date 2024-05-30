@@ -4,6 +4,7 @@ library(terra)
 library(sf)
 
 split_size = 128 #size of image patches that you want to split
+
 rst <- raster("raster file that you want to split")
 rst.grd <- aggregate(rst, fact = split_size)
 values(rst.grd) <- seq(1, raster::ncol(rst.grd)*raster::nrow(rst.grd), 1)
