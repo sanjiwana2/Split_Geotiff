@@ -14,7 +14,7 @@ values(rst.grd) <- seq(1, raster::ncol(rst.grd)*raster::nrow(rst.grd), 1)
 rst.shp <- as.polygons(rast(rst.grd))
 
 #save the grid file as the vector layer (do not need this if you dont
-writeVector(rst.shp, filename = paste0("grid_128_", nm, ".gpkg"), overwrite = T)
+writeVector(rst.shp, filename = paste0("grid_", split_size, "_", nm, ".gpkg"), overwrite = T)
 
 #loop using the resulted grid to crop image into tiles
 for(j in 1:length(rst.shp)){
